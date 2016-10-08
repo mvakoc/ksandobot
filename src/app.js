@@ -20,10 +20,10 @@ server.post('/api/messages', connector.listen())
 
 bot.dialog(
     '/', [
-        session.send('Ahoj, já jsem tvůj pomocník s výběrem kšand. Odpověz mi prosím na pár otázek a já ti řeknu jaké kšandy se k tobě hodí'),
-        session.send('A jako bonus ti řeknu jaká celebrita by si vybrala stejně jako ty :-)'),
         (session, args, next) => {
-            session.userData.answers = []
+            session.send('Ahoj, já jsem tvůj pomocník s výběrem kšand. Odpověz mi prosím na pár otázek a já ti řeknu jaké kšandy se k tobě hodí'),
+                session.send('A jako bonus ti řeknu jaká celebrita by si vybrala stejně jako ty :-)'),
+                session.userData.answers = []
             next()
         }, ...Questions.map(question => (session, result, next) => {
             if (result.response) {

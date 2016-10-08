@@ -5,7 +5,7 @@
     "main": "lib/app.js",
     "scripts": {
         "build": "./node_modules/.bin/babel src -d lib",
-        "start": "npm install && npm run build && node lib/app.js",
+        "start": "npm run build && node lib/app.js",
         "dev": "nodemon --config nodemon.json -x npm start"
     },
     "author": "",
